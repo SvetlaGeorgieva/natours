@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Learning node.js, Express and MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SvetlaGeorgieva/natours.git"
+  },
+  "author": "Svetla Yankova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SvetlaGeorgieva/natours/issues"
+  },
+  "homepage": "https://github.com/SvetlaGeorgieva/natours#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
