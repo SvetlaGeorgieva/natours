@@ -3,3 +3,6 @@
 
 # Dependency directories
 node_modules/
+
+# Dev files
+dev-data/data/tours-simple.json
