@@ -8,8 +8,11 @@ const app = express();
 
 // 1)  MIDDLEWARES
 app.use(morgan('dev'));
-
 app.use(express.json());
+
+// Serving static files
+// express.static() defines a folder which we can access to serve static files. Serves only files, not folders (can serve 'http://127.0.0.1:3000/img/pin.png', but can't serve 'http://127.0.0.1:3000/img/')
+app.use(express.static(`${__dirname}/public`));
 
 // Defining our own middleware
 // The order of middlewares matters. If it ts defined after a request-response cycle has ended (when a handler function sends the response), it won't be called, it won't be a part of the middleware stack. So global middleware functions are declared before the handler functions, if we want them to be executed.
