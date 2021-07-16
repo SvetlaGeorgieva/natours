@@ -7,7 +7,10 @@ const userRouter = require('./routes/userRoutes');
 const app = express();
 
 // 1)  MIDDLEWARES
-app.use(morgan('dev'));
+// process.env is available even though it is not defined with require in this file. Why? Because the process is one no matter in which file we are, and the loading of the enviroment variables needs to happen only once. Then they are available on the process. This has happened in server.js
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 app.use(express.json());
 
 // Serving static files
