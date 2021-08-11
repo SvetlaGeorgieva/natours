@@ -9,7 +9,6 @@ class APIFeatures {
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach(el => delete queryObj[el]);
 
-    // 1B) Advansed filtering
     let queryStr = JSON.stringify(queryObj);
     // replace (gte, gt, lte, lt) with the corresponding mongodb operator (like $gte)
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
