@@ -60,6 +60,14 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
+// Add a passwordChangedAt property when a user updates his password
+userSchema.pre('save', function (next) {
+  if (!this.isModified('password') || this.isNew) return next();
+
+  this.passwordChangedAt = Date.now();
+  next() - 1000;
+});
+
 // instance method -> available on the document
 userSchema.methods.correctPassword = async function (
   candidatePassword,
