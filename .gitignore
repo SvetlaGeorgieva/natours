@@ -6,3 +6,6 @@ node_modules/
 
 # Dev files
 dev-data/data/tours-simple.json
+
+# Environment variables file
+config.env
