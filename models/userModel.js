@@ -45,6 +45,11 @@ const userSchema = new mongoose.Schema({
   },
   passwordResetToken: String,
   passwordResetExpires: Date,
+  active: {
+    type: Boolean,
+    default: true,
+    select: false,
+  },
 });
 
 // encrypt the password on password save/update
@@ -66,6 +71,13 @@ userSchema.pre('save', function (next) {
 
   this.passwordChangedAt = Date.now();
   next() - 1000;
+});
+
+// for all queries that start with the word 'find'. It will filter out any inactive documents
+userSchema.pre(/^find/, function (next) {
+  // this points to the current query
+  this.find({ active: { $ne: false } });
+  next();
 });
 
 // instance method -> available on the document
