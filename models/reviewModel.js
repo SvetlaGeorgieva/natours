@@ -53,3 +53,8 @@ reviewSchema.pre(/^find/, function (next) {
 const Review = mongoose.model('Review', reviewSchema);
 
 module.exports = Review;
+
+// How we want to use the reviews:
+// POST /tour/234dadf4/reviews -> current user posts new review for this tour
+// GET /tour/234dadf4/reviews -> get all reviews for this tour
+// GET /tour/234dadf4/reviews/213ytja7 -> get this review for tour with that id
