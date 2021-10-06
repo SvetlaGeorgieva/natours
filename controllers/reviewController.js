@@ -1,5 +1,6 @@
 const Review = require('../models/reviewModel');
 const catchAsync = require('../utils/catchAsync');
+const factory = require('../controllers/handlerFactory');
 
 exports.getAllReviews = catchAsync(async (req, res, next) => {
   let filter = {};
@@ -38,10 +39,4 @@ exports.createReview = catchAsync(async (req, res, next) => {
   });
 });
 
-// // EXECUTE QUERY
-// const features = new APIFeatures(Tour.find(), req.query)
-//   .filter()
-//   .sort()
-//   .limitFields()
-//   .paginate();
-// const tours = await features.query;
+exports.deleteReview = factory.deleteOne(Review);
