@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
@@ -14,7 +15,12 @@ const reviewRouter = require('./routes/reviewRoutes');
 
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
 // 1) GLOBAL MIDDLEWARES
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
 app.use(helmet());
@@ -56,10 +62,6 @@ app.use(
   })
 );
 
-// Serving static files
-// -> express.static() a folder which we can access to serve static files. Serves only files, not folders (can serve 'http://127.0.0.1:3000/img/pin.png', but can't serve 'http://127.0.0.1:3000/img/')
-app.use(express.static(`${__dirname}/public`));
-
 // Test middleware: create a middleware to add the request time to the response object
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
@@ -67,7 +69,13 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-// mounting the routers (these routers are actually middlewares)
+app.get('/', (req, res) => {
+  res.status(200).render('base', {
+    tour: 'The Forest Hiker',
+    user: 'Jonas',
+  });
+});
+
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
