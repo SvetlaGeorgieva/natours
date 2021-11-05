@@ -84,7 +84,7 @@ app.use(
 // Test middleware: create a middleware to add the request time to the response object
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
-  console.log(req.cookies);
+  // console.log(req.cookies);
   next();
 });
 

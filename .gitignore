@@ -9,3 +9,7 @@ dev-data/data/tours-simple.json
 
 # Environment variables file
 config.env
+
+# Parcel bundler
+.parcel-cache
+public/js/bundled/
