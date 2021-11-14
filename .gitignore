@@ -8,8 +8,8 @@ node_modules/
 dev-data/data/tours-simple.json
 
 # Environment variables file
-config.env
+*.env
 
 # Parcel bundler
-.parcel-cache
+.parcel-cache/
 public/js/bundled/
