@@ -31,7 +31,9 @@ export const logout = async () => {
     });
 
     if ((res.data.status = 'success')) {
-      location.reload();
+      window.setTimeout(() => {
+        location.assign('/');
+      }, 1500);
     }
   } catch (err) {
     console.log(err.response);
