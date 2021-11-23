@@ -4,7 +4,14 @@
   "description": "Learning node.js, Express and MongoDB",
   "main": "app.js",
   "targets": {
-    "main": false
+    "main": false,
+    "default": {
+      "outputFormat": "global",
+      "engines": {
+        "browsers": "> 0.25%"
+      },
+      "isLibrary": false
+    }
   },
   "scripts": {
     "start": "node server.js",
@@ -24,6 +31,7 @@
   },
   "homepage": "https://github.com/SvetlaGeorgieva/natours#readme",
   "dependencies": {
+    "@swc/helpers": "^0.2.14",
     "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
@@ -58,5 +66,6 @@
   },
   "engines": {
     "node": ">=10.0.0"
-  }
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }

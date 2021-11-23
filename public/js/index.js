@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime';
+import regeneratorRuntime from 'regenerator-runtime';
 import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
