@@ -1323,3 +1323,15 @@ body {
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.disabled a {
+  pointer-events: none;
+}
+.disabled.nav__el {
+  pointer-events: none;
+  opacity: 0.6;
+}
