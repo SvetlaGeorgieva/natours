@@ -24,4 +24,5 @@ By building this project I am learning node.js, Express and MongoDB.
 
 ## API documentation
 
-> The API documentation, generated with Postman can be viewed here: [https://documenter.getpostman.com/view/16347966/UVR5rpUQ](https://documenter.getpostman.com/view/16347966/UVR5rpUQ)
+> The API documentation, generated with Postman can be viewed here:  
+> [https://documenter.getpostman.com/view/16347966/UVR5rpUQ](https://documenter.getpostman.com/view/16347966/UVR5rpUQ)
