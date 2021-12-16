@@ -9,16 +9,32 @@ By building this project I am learning node.js, Express and MongoDB.
 - **Install Node.js version 10+**
 - **Fork and clone repository**
 
-- **how to create MongoDB database and fill it with data** - TODO
+- **Create MongoDB hosted database**
+
+  - Log in (or create account) at [MongoDB Atlas](https://account.mongodb.com/account/login).
+  - Create new project. Give it a name (ex. natours), give yourself 'Project Owner' permissions
+  - Click on the button 'Build a Cluster'. You can use the default settings for a free cluster.
+
+- **Connect app to your hosted batabase** - TODO
+
+  - On Cluster0 click the 'Connect' button. Add your current IP address (there is a button for this), so that your computer could connect to this cluster.
+  - Create MongoDB username and password (fill in the username and password data and click on 'Create MongoDB User').
+  - Use these values to replace variables `DATABASE` and `DATABASE_PASSWORD` in your 'config.env' file. **See under section 'Configuration' for details!**
+  - Click the button 'Choose Connection Method'. Choose 'Connect Your Application'.
+  - Driver -> Node.js. Version -> latest one of the list
+  - Copy the connection string. Make sure to use your username and database name. Use this string to construct the value of the `DATABASE` variable in your 'config.env' file. **See under section 'Configuration' for details!**
+
+- **Fill your database with data** - TODO
 
 - **SMTP settings**
 
   - To capture SMTP traffic from our dev environment, we can use a service like 'mailtrap'. Then username, password, host and port will need to be set in our 'config.env' file.
 
   - Example with Mailtrap:
-    > - create new account on [https://mailtrap.io/](https://mailtrap.io/)
+    > - create new account on [Mailtrap](https://mailtrap.io/)
     > - Tab 'Inboxes' -> create new project and give it a name (like 'natours')
     > - Under tab 'SMTP Settings' -> click on 'Show Credentials' -> there you will find your username, password, host and port settings.
+    > - Use these values to replace variables `EMAIL_USERNAME`, `EMAIL_PASSWORD`, `EMAIL_HOST` and `EMAIL_PORT` in your 'config.env' file. **See under section 'Configuration' for details!**
 
 - **Configuration**
 
@@ -56,5 +72,4 @@ By building this project I am learning node.js, Express and MongoDB.
 
 ## API documentation
 
-> The API documentation generated with Postman can be viewed here:  
-> [https://documenter.getpostman.com/view/16347966/UVR5rpUQ](https://documenter.getpostman.com/view/16347966/UVR5rpUQ)
+> The API documentation generated with Postman can be viewed here: [Natours project API documentation](https://documenter.getpostman.com/view/16347966/UVR5rpUQ)
