@@ -19,7 +19,7 @@ By building this project I am learning node.js, Express and MongoDB.
 
   - On Cluster0 click the 'Connect' button. Add your current IP address (there is a button for this), so that your computer could connect to this cluster.
   - Create MongoDB username and password (fill in the username and password data and click on 'Create MongoDB User').
-  - Use these values to replace variables `DATABASE` and `DATABASE_PASSWORD` in your 'config.env' file. **See under section 'Configuration' for details!**
+  - Use your password to set your `DATABASE_PASSWORD` variable in your 'config.env' file. **See under section 'Configuration' for details!**
   - Click the button 'Choose Connection Method'. Choose 'Connect Your Application'.
   - Driver -> Node.js. Version -> latest one of the list
   - Copy the connection string. Make sure to use your username and database name. Use this string to construct the value of the `DATABASE` variable in your 'config.env' file. **See under section 'Configuration' for details!**
