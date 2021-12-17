@@ -2,11 +2,12 @@
 
 > A node.js website application with dynamic data where you can browse, rate and book different tours.
 
-By building this project I am learning node.js, Express and MongoDB.
+By building this project I am learning Node.js, Express and MongoDB.
 
-## How to setup and run this project - TODO
+## How to setup and run this project
 
 - **Install Node.js version 10+**
+
 - **Fork and clone repository**
 
 - **Create MongoDB hosted database**
@@ -15,20 +16,31 @@ By building this project I am learning node.js, Express and MongoDB.
   - Create new project. Give it a name (ex. natours), give yourself 'Project Owner' permissions
   - Click on the button 'Build a Cluster'. You can use the default settings for a free cluster.
 
-- **Connect app to your hosted batabase** - TODO
+- **Connect app to your hosted batabase**
 
   - On Cluster0 click the 'Connect' button. Add your current IP address (there is a button for this), so that your computer could connect to this cluster.
-  - Create MongoDB username and password (fill in the username and password data and click on 'Create MongoDB User').
+  - Create MongoDB username and password (fill in the username and password input fields and click on 'Create MongoDB User').
   - Use your password to set your `DATABASE_PASSWORD` variable in your 'config.env' file. **See under section 'Configuration' for details!**
   - Click the button 'Choose Connection Method'. Choose 'Connect Your Application'.
   - Driver -> Node.js. Version -> latest one of the list
   - Copy the connection string. Make sure to use your username and database name. Use this string to construct the value of the `DATABASE` variable in your 'config.env' file. **See under section 'Configuration' for details!**
 
-- **Fill your database with data** - TODO
+- **Fill your database with data**
+
+  > Note: Dev database data (for tours, reviews, users) is located at './dev-data/data/'. We can import it with a specially implemented JS command. Keep in mind that the dev data has already encrypted passwords, so we don't want to encrypt on top of that. The instructions below handle this.
+
+  - Manually disable (comment out) all pre-save middlewares in './models/userModel.js' -> this will disable the password encryption on save/update. They all start with `userSchema.pre('save'` .
+  - In terminal, from project's root folder, run  
+    `node ./dev-data/data/import-dev-data.js --import`
+  - If successful, you will see message _Data successfully loaded!_
+  - Go back to './models/userModel.js' and manually enable (uncomment) all pre-save middlewares again.
+  - To delete all database data, you can run command:  
+    `node ./dev-data/data/import-dev-data.js --delete`
+  - If successful, you will see message _Data successfully deleted!_
 
 - **SMTP settings**
 
-  - To capture SMTP traffic from our dev environment, we can use a service like 'mailtrap'. Then username, password, host and port will need to be set in our 'config.env' file.
+  - To capture SMTP traffic from our dev environment, we can use a service like 'Mailtrap'. We will use the username, password, host to configure the application as described in section _Configuration_.
 
   - Example with Mailtrap:
     > - create new account on [Mailtrap](https://mailtrap.io/)
@@ -44,12 +56,12 @@ By building this project I am learning node.js, Express and MongoDB.
 
   - Replace variables:
 
-    > - `DATABASE` -> replace your username and MongoDB cluster name
-    > - `DATABASE_PASSWORD` -> replace your MongoDB database password
-    > - `JWT_SECRET` -> can be any string you want. Simply make it a little longer, around 30-50 characters long. Like `some-very-very-long-string-for-your-secret`
+    > - `DATABASE` -> Replace your username, database name and MongoDB cluster name
+    > - `DATABASE_PASSWORD` -> Replace your MongoDB database password
+    > - `JWT_SECRET` -> Can be any string you want. Simply make it a little longer, around 30-50 characters long. Like `some-very-very-long-string-for-your-secret`
     > - `EMAIL_USERNAME` -> Set to your SMTP username
     > - `EMAIL_PASSWORD` -> Set to your SMTP password
-    > - `EMAIL_HOST` -> Set to your SMTP username. `EMAIL_HOST=smtp.mailtrap.io` if you are using Mailtrap.
+    > - `EMAIL_HOST` -> Set to your SMTP host. `EMAIL_HOST=smtp.mailtrap.io` if you are using Mailtrap.
     > - `EMAIL_PORT` -> Set to your SMTP port. `EMAIL_PORT=25` if you are using Mailtrap.
 
 - **Run the project locally**
