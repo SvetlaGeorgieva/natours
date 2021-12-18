@@ -13,26 +13,29 @@ By building this project I am learning Node.js, Express and MongoDB.
 - **Create MongoDB hosted database**
 
   - Log in (or create account) at [MongoDB Atlas](https://account.mongodb.com/account/login).
-  - Create new project. Give it a name (ex. natours), give yourself 'Project Owner' permissions
-  - Click on the button 'Build a Cluster'. You can use the default settings for a free cluster.
+  - Under Projects -> Create new project. Give it a name (ex. natours), give yourself 'Project Owner' permissions
+  - Click on the button 'Build a Database'. Select the free option. You can use the default settings for a free cluster. At the end of the page, click on 'Create Cluster' button.
 
 - **Connect app to your hosted batabase**
 
-  - On Cluster0 click the 'Connect' button. Add your current IP address (there is a button for this), so that your computer could connect to this cluster.
-  - Create MongoDB username and password (fill in the username and password input fields and click on 'Create MongoDB User').
+  - A 'Security Quickstart' page should open up. If not, on Cluster0 click the 'Connect' button.
+  - Add your current IP address (there is a button for this), so that your computer could connect to this cluster.
+  - Create MongoDB username and password (fill in the username and password input fields and click on 'Create User').
   - Use your password to set your `DATABASE_PASSWORD` variable in your 'config.env' file. **See under section 'Configuration' for details!**
+  - On Cluster0 click the 'Connect' button.
   - Click the button 'Choose Connection Method'. Choose 'Connect Your Application'.
   - Driver -> Node.js. Version -> latest one of the list
-  - Copy the connection string. Make sure to use your username and database name. Use this string to construct the value of the `DATABASE` variable in your 'config.env' file. **See under section 'Configuration' for details!**
+  - Copy the connection string. Use this string to construct the value of the `DATABASE` variable in your 'config.env' file. Make sure to use your username and database name. **See under section 'Configuration' for details!**
 
 - **Fill your database with data**
 
   > Note: Dev database data (for tours, reviews, users) is located at './dev-data/data/'. We can import it with a specially implemented JS command. Keep in mind that the dev data has already encrypted passwords, so we don't want to encrypt on top of that. The instructions below handle this.
 
   - Manually disable (comment out) all pre-save middlewares in './models/userModel.js' -> this will disable the password encryption on save/update. They all start with `userSchema.pre('save'` .
-  - In terminal, from project's root folder, run  
-    `node ./dev-data/data/import-dev-data.js --import`
-  - If successful, you will see message _Data successfully loaded!_
+  - In terminal, from project's root folder run:
+    - `npm install` -> to install all dependencies
+    - `node ./dev-data/data/import-dev-data.js --import`
+    - If successful, you will see message _Data successfully loaded!_
   - Go back to './models/userModel.js' and manually enable (uncomment) all pre-save middlewares again.
   - To delete all database data, you can run command:  
     `node ./dev-data/data/import-dev-data.js --delete`
