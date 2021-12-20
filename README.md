@@ -85,7 +85,7 @@ By building this project I am learning Node.js, Express and MongoDB.
 
 > The API documentation generated with Postman can be viewed here: [Natours project API documentation](https://documenter.getpostman.com/view/16347966/UVR5rpUQ)
 
-## Screenshots/videos - TODO
+## Screenshots/videos
 
 - Overview page / main page
   ![Overview page](./public/project-media/natours_overview-page.png)
