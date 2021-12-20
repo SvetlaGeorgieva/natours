@@ -13,3 +13,6 @@ config.env
 # Parcel bundler
 .parcel-cache/
 public/js/bundled/
+
+# Project description media files
+public/project-media/

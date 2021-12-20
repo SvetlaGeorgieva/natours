@@ -83,7 +83,10 @@ By building this project I am learning Node.js, Express and MongoDB.
 
 ## Screenshots/videos - TODO
 
-- TODO basic screens screenshots
+- Overview page / main page
+  ![Overview page](./public/project-media/natours_overview-page.png)
+- User profile page
+  ![Overview page](./public/project-media/natours_user-page.png)
 
 ## API documentation
 
