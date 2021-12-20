@@ -81,13 +81,15 @@ By building this project I am learning Node.js, Express and MongoDB.
 - MongoDB, mongoose
 - Postman
 
+## API documentation
+
+> The API documentation generated with Postman can be viewed here: [Natours project API documentation](https://documenter.getpostman.com/view/16347966/UVR5rpUQ)
+
 ## Screenshots/videos - TODO
 
 - Overview page / main page
   ![Overview page](./public/project-media/natours_overview-page.png)
+- Single tour details page
+  ...
 - User profile page
-  ![Overview page](./public/project-media/natours_user-page.png)
-
-## API documentation
-
-> The API documentation generated with Postman can be viewed here: [Natours project API documentation](https://documenter.getpostman.com/view/16347966/UVR5rpUQ)
+  ![User profile page](./public/project-media/natours_user-page.png)
