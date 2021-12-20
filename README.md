@@ -90,6 +90,8 @@ By building this project I am learning Node.js, Express and MongoDB.
 - Overview page / main page
   ![Overview page](./public/project-media/natours_overview-page.png)
 - Single tour details page
-  ...
+
+  https://user-images.githubusercontent.com/6852385/146761480-b148043c-a8c2-43fe-ac50-51fb6aa478c4.mp4
+  
 - User profile page
   ![User profile page](./public/project-media/natours_user-page.png)
